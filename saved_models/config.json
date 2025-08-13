@@ -1,0 +1,23 @@
+{
+  "fifo_path": "/tmp/csififo",
+  "expected_samples": 40,
+  "input_shape": [128, 40],
+  "class_labels": [
+    "iron", "wood", "plastic", "water", "fabric"
+  ],
+  "num_kernels": 5000,
+  "batch_size": 32,
+  "model_path": "/home/ravindu/Desktop/final/saved_models",
+  "firebase_config": {
+    "apiKey": "AIzaSwrdshin9R_LCKNXCDV1cyGpOS_saFDFGHZc",
+    "authDomain": "meterials-4731c.firebaseapp.com",
+    "databaseURL": "https://meterials-4731c-default-rtdb.firebaseio.com",
+    "projectId": "meterials-4731c",
+    "storageBucket": "meterials-4731c.appspot.com",
+    "messagingSenderId": "unknown",
+    "appId": "unknown"
+  },
+  "email_address": "ravindupahasara938@gmail.com",
+  "email_password": "qxqubrlwusiugutfbw",
+  "alert_email": "ravindupahasara938@gmail.com"
+}

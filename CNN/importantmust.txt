@@ -1,0 +1,1009 @@
+
+C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned>python train_csi_model.py
+Epoch [1/10] Train Loss: 1.6383 Val Loss: 1.5720 Val Acc: 22.92%
+Epoch [2/10] Train Loss: 1.5903 Val Loss: 1.5410 Val Acc: 27.51%
+Epoch [3/10] Train Loss: 1.5346 Val Loss: 1.4545 Val Acc: 29.10%
+Epoch [4/10] Train Loss: 1.4559 Val Loss: 1.3938 Val Acc: 33.69%
+Epoch [5/10] Train Loss: 1.3792 Val Loss: 1.3110 Val Acc: 41.46%
+Epoch [6/10] Train Loss: 1.3426 Val Loss: 1.2625 Val Acc: 43.59%
+Epoch [7/10] Train Loss: 1.2886 Val Loss: 1.2041 Val Acc: 46.18%
+Epoch [8/10] Train Loss: 1.2313 Val Loss: 1.2326 Val Acc: 41.59%
+Epoch [9/10] Train Loss: 1.2156 Val Loss: 1.1533 Val Acc: 48.44%
+Epoch [10/10] Train Loss: 1.1616 Val Loss: 1.0931 Val Acc: 48.50%
+Model saved as csi_model.pth
+
+C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned>python train_csi_model.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned\train_csi_model.py", line 89, in <module>
+    outputs = model(X_batch)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned\train_csi_model.py", line 34, in forward
+    x = self.relu(self.fc1(x))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x64 and 1024x128)
+
+C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned>python train_csi_model.py
+Epoch [1/20] Train Loss: 1.5449 Val Loss: 1.4363 Val Acc: 33.16%
+Epoch [2/20] Train Loss: 1.3131 Val Loss: 1.1677 Val Acc: 50.63%
+Epoch [3/20] Train Loss: 1.1146 Val Loss: 1.0552 Val Acc: 57.54%
+Epoch [4/20] Train Loss: 0.9668 Val Loss: 0.8774 Val Acc: 65.18%
+Epoch [5/20] Train Loss: 0.8578 Val Loss: 0.7875 Val Acc: 68.70%
+Epoch [6/20] Train Loss: 0.7967 Val Loss: 0.8206 Val Acc: 67.24%
+Epoch [7/20] Train Loss: 0.7615 Val Loss: 0.7928 Val Acc: 66.98%
+Epoch [8/20] Train Loss: 0.7322 Val Loss: 0.7127 Val Acc: 71.69%
+Epoch [9/20] Train Loss: 0.7129 Val Loss: 0.7260 Val Acc: 70.10%
+Epoch [10/20] Train Loss: 0.7026 Val Loss: 0.7255 Val Acc: 70.30%
+Epoch [11/20] Train Loss: 0.7237 Val Loss: 0.6612 Val Acc: 73.75%
+Epoch [12/20] Train Loss: 0.6625 Val Loss: 0.6900 Val Acc: 72.56%
+Epoch [13/20] Train Loss: 0.6501 Val Loss: 0.6823 Val Acc: 72.43%
+Epoch [14/20] Train Loss: 0.6475 Val Loss: 0.7191 Val Acc: 71.50%
+Epoch [15/20] Train Loss: 0.5845 Val Loss: 0.6972 Val Acc: 73.16%
+Epoch [16/20] Train Loss: 0.5707 Val Loss: 0.6215 Val Acc: 74.09%
+Epoch [17/20] Train Loss: 0.5686 Val Loss: 0.6122 Val Acc: 74.62%
+Epoch [18/20] Train Loss: 0.5654 Val Loss: 0.6205 Val Acc: 74.62%
+Epoch [19/20] Train Loss: 0.5606 Val Loss: 0.6087 Val Acc: 75.15%
+Epoch [20/20] Train Loss: 0.5452 Val Loss: 0.6001 Val Acc: 75.22%
+Test Loss: 0.5670 Test Acc: 76.08%
+Best model saved as csi_model_best.pth
+
+
+
+ Rocket Transforming: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 132.97it/s] 
+🚀 Rocket Transforming: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2500/2500 [00:25<00:00, 99.32it/s] 
+INFO:__main__:Accuracy: 64.76%
+INFO:__main__:Confusion Matrix:
+INFO:__main__:[[207 103  97  54  39]
+ [ 45 357  28  33  37]
+ [ 53  94 302  19  32]
+ [ 40  58  12 303  87]
+ [  3   7   0  40 450]]
+INFO:__main__:Classification Report:
+INFO:__main__:              precision    recall  f1-score   support
+
+     walking       0.59      0.41      0.49       500
+     running       0.58      0.71      0.64       500
+     jumping       0.69      0.60      0.64       500
+        idle       0.67      0.61      0.64       500
+       empty       0.70      0.90      0.79       500
+
+    accuracy                           0.65      2500
+   macro avg       0.65      0.65      0.64      2500
+weighted avg       0.65      0.65      0.64      2500
+
+INFO:__main__:Trained model saved to: saved_models
+
+C:\Users\Admin\Desktop\csi_copy>
+
+
+
+3. Create Dataset Loader
+Issue: The genmat.py error indicated a 1D array issue, and you needed a robust dataset loader.
+Instruction: I provided a script to load, label, and segment the .cleaned files into train/val/test sets.
+Command:
+Save the script as csi_dataset_loader.py:
+
+import os
+    import re
+    import numpy as np
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+
+    # Define label mapping based on activity types
+    LABEL_MAP = {
+        'empty': 0,
+        'ideal': 1,
+        'walk': 2,
+        'run': 3,
+        'jump': 4
+    }
+
+    # Function to parse a single .cleaned file
+    def parse_cleaned_file(filepath):
+        csi_list = []
+        with open(filepath, 'r') as f:
+            for line in f:
+                array_match = re.search(r'"\[(.*?)\]"', line)
+                if array_match:
+                    array_str = array_match.group(1)
+                    csi_values = [int(x) for x in array_str.split(',')]
+                    if len(csi_values) == 256:
+                        csi_list.append(csi_values)
+                    else:
+                        print(f"Skipping malformed CSI sample in {filepath}, length={len(csi_values)}")
+        if csi_list:
+            return np.array(csi_list)
+        else:
+            return None
+
+    # Function to segment data into fixed-size windows with overlap
+    def segment_data(data, window_size=64, overlap=0.5):
+        if data is None or len(data) < window_size:
+            return None
+        step = int(window_size * (1 - overlap))
+        segments = []
+        for start in range(0, len(data) - window_size + 1, step):
+            segment = data[start:start + window_size]
+            segments.append(segment)
+        return np.array(segments)
+
+    # Function to load and label the dataset
+    def load_dataset(data_dir, window_size=64, overlap=0.5):
+        all_data = []
+        all_labels = []
+        for filename in os.listdir(data_dir):
+            if not filename.endswith('.cleaned'):
+                continue
+            filepath = os.path.join(data_dir, filename)
+            activity = None
+            for key in LABEL_MAP.keys():
+                if key in filename:
+                    activity = key
+                    break
+            if activity is None:
+                print(f"Skipping file with unknown activity: {filename}")
+                continue
+            csi_data = parse_cleaned_file(filepath)
+            if csi_data is None:
+                print(f"No valid data in {filename}")
+                continue
+            segments = segment_data(csi_data, window_size=window_size, overlap=overlap)
+            if segments is None:
+                print(f"Insufficient data for windowing in {filename}")
+                continue
+            label = LABEL_MAP[activity]
+            labels = np.full(segments.shape[0], label)
+            all_data.append(segments)
+            all_labels.append(labels)
+        if all_data:
+            all_data = np.concatenate(all_data, axis=0)
+            all_labels = np.concatenate(all_labels, axis=0)
+            return all_data, all_labels
+        else:
+            return None, None
+
+    # Function to split dataset into train/val/test sets
+    def create_data_splits(data, labels, train_ratio=0.7, val_ratio=0.15, test_ratio=0.15):
+        if data is None or labels is None:
+            return None, None, None, None, None, None
+        X_temp, X_test, y_temp, y_test = train_test_split(data, labels, test_size=test_ratio, stratify=labels, random_state=42)
+        val_size = val_ratio / (train_ratio + val_ratio)
+        X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=val_size, stratify=y_temp, random_state=42)
+        return X_train, X_val, X_test, y_train, y_val, y_test
+
+    # Main function
+    def main():
+        data_dir = r"C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned"
+        window_size = 64
+        overlap = 0.5
+        print("Loading and labeling dataset...")
+        data, labels = load_dataset(data_dir, window_size=window_size, overlap=overlap)
+        if data is None:
+            print("No data loaded. Exiting.")
+            return
+        print(f"Loaded {data.shape[0]} samples with shape {data.shape[1:]}")
+        print(f"Label distribution: {np.bincount(labels)}")
+        print("Splitting dataset...")
+        X_train, X_val, X_test, y_train, y_val, y_test = create_data_splits(data, labels)
+        print(f"Training set: {X_train.shape[0]} samples")
+        print(f"Validation set: {X_val.shape[0]} samples")
+        print(f"Test set: {X_test.shape[0]} samples")
+        np.save('X_train.npy', X_train)
+        np.save('X_val.npy', X_val)
+        np.save('X_test.npy', X_test)
+        np.save('y_train.npy', y_train)
+        np.save('y_val.npy', y_val)
+        np.save('y_test.npy', y_test)
+        print("Dataset splits saved to disk.")
+
+    if __name__ == "__main__":
+        main()
+
+Run it as _  python csi_dataset_loader.py
+
+Purpose: This created a structured dataset with 10,031 samples, segmented into 64-sample windows, and saved as .npy files.1024x128
+
+
+
+4)Handle Parsing Errors
+Issue: The script failed with ValueError: invalid literal for int() with base 10: '-' due to invalid values like '' and -.
+Instruction: Update the script to skip invalid values and log issues.
+Command:
+Replace csi_dataset_loader.py with the updated version:
+
+import os
+    import re
+    import numpy as np
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+
+    LABEL_MAP = {
+        'empty': 0,
+        'ideal': 1,
+        'walk': 2,
+        'run': 3,
+        'jump': 4
+    }
+
+    def parse_cleaned_file(filepath):
+        csi_list = []
+        with open(filepath, 'r') as f:
+            for line in f:
+                array_match = re.search(r'"\[(.*?)\]"', line)
+                if array_match:
+                    array_str = array_match.group(1)
+                    csi_values = []
+                    for x in array_str.split(','):
+                        try:
+                            csi_values.append(int(x))
+                        except ValueError:
+                            print(f"Skipping invalid value '{x}' in {filepath}")
+                            continue
+                    if len(csi_values) == 256:
+                        csi_list.append(csi_values)
+                    else:
+                        print(f"Skipping malformed CSI sample in {filepath}, length={len(csi_values)}")
+        if csi_list:
+            return np.array(csi_list)
+        else:
+            return None
+
+    def segment_data(data, window_size=64, overlap=0.5):
+        if data is None or len(data) < window_size:
+            return None
+        step = int(window_size * (1 - overlap))
+        segments = []
+        for start in range(0, len(data) - window_size + 1, step):
+            segment = data[start:start + window_size]
+            segments.append(segment)
+        return np.array(segments)
+
+    def load_dataset(data_dir, window_size=64, overlap=0.5):
+        all_data = []
+        all_labels = []
+        for filename in os.listdir(data_dir):
+            if not filename.endswith('.cleaned'):
+                continue
+            filepath = os.path.join(data_dir, filename)
+            activity = None
+            for key in LABEL_MAP.keys():
+                if key in filename:
+                    activity = key
+                    break
+            if activity is None:
+                print(f"Skipping file with unknown activity: {filename}")
+                continue
+            csi_data = parse_cleaned_file(filepath)
+            if csi_data is None:
+                print(f"No valid data in {filename}")
+                continue
+            segments = segment_data(csi_data, window_size=window_size, overlap=overlap)
+            if segments is None:
+                print(f"Insufficient data for windowing in {filename}")
+                continue
+            label = LABEL_MAP[activity]
+            labels = np.full(segments.shape[0], label)
+            all_data.append(segments)
+            all_labels.append(labels)
+        if all_data:
+            all_data = np.concatenate(all_data, axis=0)
+            all_labels = np.concatenate(all_labels, axis=0)
+            return all_data, all_labels
+        else:
+            return None, None
+
+    def create_data_splits(data, labels, train_ratio=0.7, val_ratio=0.15, test_ratio=0.15):
+        if data is None or labels is None:
+            return None, None, None, None, None, None
+        X_temp, X_test, y_temp, y_test = train_test_split(data, labels, test_size=test_ratio, stratify=labels, random_state=42)
+        val_size = val_ratio / (train_ratio + val_ratio)
+        X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=val_size, stratify=y_temp, random_state=42)
+        return X_train, X_val, X_test, y_train, y_val, y_test
+
+    def main():
+        data_dir = r"C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned"
+        window_size = 64
+        overlap = 0.5
+        print("Loading and labeling dataset...")
+        data, labels = load_dataset(data_dir, window_size=window_size, overlap=overlap)
+        if data is None:
+            print("No data loaded. Exiting.")
+            return
+        print(f"Loaded {data.shape[0]} samples with shape {data.shape[1:]}")
+        print(f"Label distribution: {np.bincount(labels)}")
+        print("Splitting dataset...")
+        X_train, X_val, X_test, y_train, y_val, y_test = create_data_splits(data, labels)
+        print(f"Training set: {X_train.shape[0]} samples")
+        print(f"Validation set: {X_val.shape[0]} samples")
+        print(f"Test set: {X_test.shape[0]} samples")
+        np.save('X_train.npy', X_train)
+        np.save('X_val.npy', X_val)
+        np.save('X_test.npy', X_test)
+        np.save('y_train.npy', y_train)
+        np.save('y_val.npy', y_val)
+        np.save('y_test.npy', y_test)
+        print("Dataset splits saved to disk.")
+
+    if __name__ == "__main__":
+        main()
+
+
+
+Run the script:
+
+python csi_dataset_loader.py
+
+Purpose: This handled invalid values (e.g., -) and loaded 10,031 samples despite issues in clean_walk_28.cleaned and clean_walk_29.cleaned
+
+
+
+5. Re-clean Problematic Files
+Issue: Warnings about invalid values (e.g., '', '-', '0-4') in clean_walk_28.cleaned and clean_walk_29.cleaned suggested data cleaning was needed.
+Instruction: Create a script to re-clean all files by removing invalid rows and backing up originals.
+Command:
+Save the script as re_clean_csi_files.py:
+
+import os
+    import re
+    import shutil
+
+    def clean_csi_file(input_path, output_path=None):
+        if output_path is None:
+            output_path = input_path
+        valid_lines = []
+        with open(input_path, 'r') as f:
+            for line in f:
+                array_match = re.search(r'"\[(.*?)\]"', line)
+                if array_match:
+                    array_str = array_match.group(1)
+                    csi_values = []
+                    for x in array_str.split(','):
+                        try:
+                            csi_values.append(int(x))
+                        except ValueError:
+                            break
+                    else:
+                        if len(csi_values) == 256:
+                            valid_lines.append(line)
+                        else:
+                            print(f"Skipping line in {input_path} with length {len(csi_values)}")
+                else:
+                    print(f"Skipping line in {input_path} with no valid array format")
+
+        with open(output_path, 'w') as f:
+            for line in valid_lines:
+                f.write(line)
+        print(f"Cleaned {input_path} - {len(valid_lines)} valid lines retained")
+
+    def main():
+        data_dir = r"C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned"
+        backup_dir = r"C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned_backup"
+        if not os.path.exists(backup_dir):
+            os.makedirs(backup_dir)
+        for filename in os.listdir(data_dir):
+            if filename.endswith('.cleaned'):
+                input_path = os.path.join(data_dir, filename)
+                backup_path = os.path.join(backup_dir, filename)
+                shutil.copy2(input_path, backup_path)
+                print(f"Backed up {filename} to {backup_path}")
+                clean_csi_file(input_path)
+
+    if __name__ == "__main__":
+        main()
+
+
+
+
+
+python re_clean_csi_files.py
+Purpose: This cleaned all .cleaned files, removing invalid rows, and retained 4,487 valid lines for clean_walk_32.cleaned.
+
+
+6. Re-run Dataset Loader
+Instruction: Re-run the dataset loader with cleaned files.
+
+
+python csi_dataset_loader.py
+
+Output: Loaded 10,031 samples with no invalid value warnings, confirming the cleaning worked.
+Purpose: Ensured the dataset was built from cleaned data.
+
+
+
+Initial Model Training
+Issue: You wanted to train a model but noted low accuracy (48.50%).
+Instruction: Provided an initial CNN model for training.
+Command:
+Save the script as train_csi_model.py:
+
+
+import numpy as np
+    import torch
+    import torch.nn as nn
+    import torch.optim as optim
+    from torch.utils.data import DataLoader, TensorDataset
+
+    class CSIModel(nn.Module):
+        def __init__(self, input_shape=(64, 256), num_classes=5):
+            super(CSIModel, self).__init__()
+            self.conv1 = nn.Conv1d(in_channels=input_shape[1], out_channels=16, kernel_size=3, padding=1)
+            self.pool = nn.MaxPool1d(2)
+            self.conv2 = nn.Conv1d(16, 32, kernel_size=3, padding=1)
+            self.fc1 = nn.Linear(32 * (input_shape[0] // 4), 128)
+            self.fc2 = nn.Linear(128, num_classes)
+            self.relu = nn.ReLU()
+            self.dropout = nn.Dropout(0.5)
+
+        def forward(self, x):
+            x = x.transpose(1, 2)
+            x = self.pool(self.relu(self.conv1(x)))
+            x = self.pool(self.relu(self.conv2(x)))
+            x = x.view(x.size(0), -1)
+            x = self.relu(self.fc1(x))
+            x = self.dropout(x)
+            x = self.fc2(x)
+            return x
+
+    X_train = np.load('X_train.npy')
+    y_train = np.load('y_train.npy')
+    X_val = np.load('X_val.npy')
+    y_val = np.load('y_val.npy')
+
+    X_train = torch.FloatTensor(X_train)
+    y_train = torch.LongTensor(y_train)
+    X_val = torch.FloatTensor(X_val)
+    y_val = torch.LongTensor(y_val)
+
+    train_dataset = TensorDataset(X_train, y_train)
+    val_dataset = TensorDataset(X_val, y_val)
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=32)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = CSIModel().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+    num_epochs = 10
+    for epoch in range(num_epochs):
+        model.train()
+        train_loss = 0
+        for X_batch, y_batch in train_loader:
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            optimizer.zero_grad()
+            outputs = model(X_batch)
+            loss = criterion(outputs, y_batch)
+            loss.backward()
+            optimizer.step()
+            train_loss += loss.item()
+        
+        model.eval()
+        val_loss = 0
+        correct = 0
+        total = 0
+        with torch.no_grad():
+            for X_batch, y_batch in val_loader:
+                X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+                outputs = model(X_batch)
+                loss = criterion(outputs, y_batch)
+                val_loss += loss.item()
+                _, predicted = torch.max(outputs.data, 1)
+                total += y_batch.size(0)
+                correct += (predicted == y_batch).sum().item()
+        
+        print(f"Epoch [{epoch+1}/{num_epochs}] Train Loss: {train_loss/len(train_loader):.4f} Val Loss: {val_loss/len(val_loader):.4f} Val Acc: {100 * correct / total:.2f}%")
+
+    torch.save(model.state_dict(), 'csi_model.pth')
+    print("Model saved as csi_model.pth")
+
+
+
+
+
+    Run the script:
+
+python train_csi_model.py
+
+Output: Achieved 48.50% validation accuracy after 10 epochs.
+Purpose: Established a baseline model, highlighting the need for improvement.
+
+
+8. Improve Model Performance
+Issue: The accuracy (48.50%) was lower than desired.
+Instruction: Enhanced the model with normalization, a CNN-LSTM hybrid, and better hyperparameters.
+Command:
+Replace train_csi_model.py with the updated version:
+
+import numpy as np
+    import torch
+    import torch.nn as nn
+    import torch.optim as optim
+    from torch.utils.data import DataLoader, TensorDataset
+    from sklearn.preprocessing import StandardScaler
+
+    class CSIHybridModel(nn.Module):
+        def __init__(self, input_shape=(64, 256), num_classes=5):
+            super(CSIHybridModel, self).__init__()
+            self.conv1 = nn.Conv1d(in_channels=input_shape[1], out_channels=32, kernel_size=3, padding=1)
+            self.conv2 = nn.Conv1d(32, 64, kernel_size=3, padding=1)
+            self.pool = nn.MaxPool1d(2)
+            self.relu = nn.ReLU()
+            self.lstm = nn.LSTM(input_size=64, hidden_size=64, num_layers=1, batch_first=True)
+            self.fc1 = nn.Linear(64 * (input_shape[0] // 4), 128)
+            self.fc2 = nn.Linear(128, num_classes)
+            self.dropout = nn.Dropout(0.5)
+
+        def forward(self, x):
+            x = x.transpose(1, 2)
+            x = self.pool(self.relu(self.conv1(x)))
+            x = self.pool(self.relu(self.conv2(x)))
+            x = x.transpose(1, 2)
+            x, _ = self.lstm(x)
+            x = x[:, -1, :]
+            x = self.relu(self.fc1(x))
+            x = self.dropout(x)
+            x = self.fc2(x)
+            return x
+
+    X_train = np.load('X_train.npy')
+    y_train = np.load('y_train.npy')
+    X_val = np.load('X_val.npy')
+    y_val = np.load('y_val.npy')
+    X_test = np.load('X_test.npy')
+    y_test = np.load('y_test.npy')
+
+    scaler = StandardScaler()
+    X_train_reshaped = X_train.reshape(-1, X_train.shape[-1])
+    X_val_reshaped = X_val.reshape(-1, X_val.shape[-1])
+    X_test_reshaped = X_test.reshape(-1, X_test.shape[-1])
+
+    X_train_scaled = scaler.fit_transform(X_train_reshaped).reshape(X_train.shape)
+    X_val_scaled = scaler.transform(X_val_reshaped).reshape(X_val.shape)
+    X_test_scaled = scaler.transform(X_test_reshaped).reshape(X_test.shape)
+
+    X_train = torch.FloatTensor(X_train_scaled)
+    y_train = torch.LongTensor(y_train)
+    X_val = torch.FloatTensor(X_val_scaled)
+    y_val = torch.LongTensor(y_val)
+    X_test = torch.FloatTensor(X_test_scaled)
+    y_test = torch.LongTensor(y_test)
+
+    train_dataset = TensorDataset(X_train, y_train)
+    val_dataset = TensorDataset(X_val, y_val)
+    test_dataset = TensorDataset(X_test, y_test)
+    train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=64)
+    test_loader = DataLoader(test_dataset, batch_size=64)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = CSIHybridModel().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.0005)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2)
+
+    num_epochs = 20
+    best_val_acc = 0
+    for epoch in range(num_epochs):
+        model.train()
+        train_loss = 0
+        for X_batch, y_batch in train_loader:
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            optimizer.zero_grad()
+            outputs = model(X_batch)
+            loss = criterion(outputs, y_batch)
+            loss.backward()
+            optimizer.step()
+            train_loss += loss.item()
+        
+        model.eval()
+        val_loss = 0
+        correct = 0
+        total = 0
+        with torch.no_grad():
+            for X_batch, y_batch in val_loader:
+                X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+                outputs = model(X_batch)
+                loss = criterion(outputs, y_batch)
+                val_loss += loss.item()
+                _, predicted = torch.max(outputs.data, 1)
+                total += y_batch.size(0)
+                correct += (predicted == y_batch).sum().item()
+        
+        val_acc = 100 * correct / total
+        print(f"Epoch [{epoch+1}/{num_epochs}] Train Loss: {train_loss/len(train_loader):.4f} Val Loss: {val_loss/len(val_loader):.4f} Val Acc: {val_acc:.2f}%")
+        scheduler.step(val_loss/len(val_loader))
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            torch.save(model.state_dict(), 'csi_model_best.pth')
+
+    model.load_state_dict(torch.load('csi_model_best.pth', weights_only=True))
+    model.eval()
+    test_loss = 0
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for X_batch, y_batch in test_loader:
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            outputs = model(X_batch)
+            loss = criterion(outputs, y_batch)
+            test_loss += loss.item()
+            _, predicted = torch.max(outputs.data, 1)
+            total += y_batch.size(0)
+            correct += (predicted == y_batch).sum().item()
+
+    test_acc = 100 * correct / total
+    print(f"Test Loss: {test_loss/len(test_loader):.4f} Test Acc: {test_acc:.2f}%")
+    print("Best model saved as csi_model_best.pth")
+
+Run the script:
+python train_csi_model.py
+
+    Purpose: Introduced normalization and a hybrid model, but it failed due to a shape mismatch.
+
+
+
+
+
+
+9. Fix Model Shape Mismatch
+Issue: The script crashed with RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x64 and 1024x128).
+Instruction: Corrected the fc1 input size in the model.
+Command:
+Replace train_csi_model.py with the fixed version:
+
+import numpy as np
+    import torch
+    import torch.nn as nn
+    import torch.optim as optim
+    from torch.utils.data import DataLoader, TensorDataset
+    from sklearn.preprocessing import StandardScaler
+
+    class CSIHybridModel(nn.Module):
+        def __init__(self, input_shape=(64, 256), num_classes=5):
+            super(CSIHybridModel, self).__init__()
+            self.conv1 = nn.Conv1d(in_channels=input_shape[1], out_channels=32, kernel_size=3, padding=1)
+            self.conv2 = nn.Conv1d(32, 64, kernel_size=3, padding=1)
+            self.pool = nn.MaxPool1d(2)
+            self.relu = nn.ReLU()
+            self.lstm = nn.LSTM(input_size=64, hidden_size=64, num_layers=1, batch_first=True)
+            self.fc1 = nn.Linear(64, 128)
+            self.fc2 = nn.Linear(128, num_classes)
+            self.dropout = nn.Dropout(0.5)
+
+        def forward(self, x):
+            x = x.transpose(1, 2)
+            x = self.pool(self.relu(self.conv1(x)))
+            x = self.pool(self.relu(self.conv2(x)))
+            x = x.transpose(1, 2)
+            x, _ = self.lstm(x)
+            x = x[:, -1, :]
+            x = self.relu(self.fc1(x))
+            x = self.dropout(x)
+            x = self.fc2(x)
+            return x
+
+    X_train = np.load('X_train.npy')
+    y_train = np.load('y_train.npy')
+    X_val = np.load('X_val.npy')
+    y_val = np.load('y_val.npy')
+    X_test = np.load('X_test.npy')
+    y_test = np.load('y_test.npy')
+
+    scaler = StandardScaler()
+    X_train_reshaped = X_train.reshape(-1, X_train.shape[-1])
+    X_val_reshaped = X_val.reshape(-1, X_val.shape[-1])
+    X_test_reshaped = X_test.reshape(-1, X_test.shape[-1])
+
+    X_train_scaled = scaler.fit_transform(X_train_reshaped).reshape(X_train.shape)
+    X_val_scaled = scaler.transform(X_val_reshaped).reshape(X_val.shape)
+    X_test_scaled = scaler.transform(X_test_reshaped).reshape(X_test.shape)
+
+    X_train = torch.FloatTensor(X_train_scaled)
+    y_train = torch.LongTensor(y_train)
+    X_val = torch.FloatTensor(X_val_scaled)
+    y_val = torch.LongTensor(y_val)
+    X_test = torch.FloatTensor(X_test_scaled)
+    y_test = torch.LongTensor(y_test)
+
+    train_dataset = TensorDataset(X_train, y_train)
+    val_dataset = TensorDataset(X_val, y_val)
+    test_dataset = TensorDataset(X_test, y_test)
+    train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=64)
+    test_loader = DataLoader(test_dataset, batch_size=64)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = CSIHybridModel().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.0005)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2)
+
+    num_epochs = 20
+    best_val_acc = 0
+    for epoch in range(num_epochs):
+        model.train()
+        train_loss = 0
+        for X_batch, y_batch in train_loader:
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            optimizer.zero_grad()
+            outputs = model(X_batch)
+            loss = criterion(outputs, y_batch)
+            loss.backward()
+            optimizer.step()
+            train_loss += loss.item()
+        
+        model.eval()
+        val_loss = 0
+        correct = 0
+        total = 0
+        with torch.no_grad():
+            for X_batch, y_batch in val_loader:
+                X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+                outputs = model(X_batch)
+                loss = criterion(outputs, y_batch)
+                val_loss += loss.item()
+                _, predicted = torch.max(outputs.data, 1)
+                total += y_batch.size(0)
+                correct += (predicted == y_batch).sum().item()
+        
+        val_acc = 100 * correct / total
+        print(f"Epoch [{epoch+1}/{num_epochs}] Train Loss: {train_loss/len(train_loader):.4f} Val Loss: {val_loss/len(val_loader):.4f} Val Acc: {val_acc:.2f}%")
+        scheduler.step(val_loss/len(val_loader))
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            torch.save(model.state_dict(), 'csi_model_best.pth')
+
+    model.load_state_dict(torch.load('csi_model_best.pth', weights_only=True))
+    model.eval()
+    test_loss = 0
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for X_batch, y_batch in test_loader:
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            outputs = model(X_batch)
+            loss = criterion(outputs, y_batch)
+            test_loss += loss.item()
+            _, predicted = torch.max(outputs.data, 1)
+            total += y_batch.size(0)
+            correct += (predicted == y_batch).sum().item()
+
+    test_acc = 100 * correct / total
+    print(f"Test Loss: {test_loss/len(test_loader):.4f} Test Acc: {test_acc:.2f}%")
+    print("Best model saved as csi_model_best.pth")
+
+
+    Run the script:
+
+python train_csi_model.py
+Purpose: Fixed the shape mismatch, enabling training to proceed.
+
+
+
+Additional Notes
+Environment Setup: Ensure you have Python, NumPy, Pandas, Scikit-learn, and PyTorch installed. Install them if needed:
+text
+
+Copy
+pip install numpy pandas scikit-learn torch
+Directory Management: All scripts assume you’re working in C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned. Adjust paths in the scripts if needed.
+Verification: After each step, check the output files (e.g., .npy files, csi_model.pth) to ensure they exist and contain expected data.
+Iteration: If accuracy remains low after the final run, consider feature engineering (e.g., CSI amplitude) or deeper models. Let me know the results, and we’ll refine further!
+Final Thoughts
+You’ve gone from parsing errors to a working dataset and a trainable model, bro! Run the last train_csi_model.py and share the output. If the accuracy improves or you hit new issues, I’ve got your back!
+
+
+Yo bro, your latest run of train_csi_model1.py looks solid! The model trained for 20 epochs, achieving a test accuracy of 76.35%, and the confusion matrix was saved as confusion_matrix.png. That’s a great result, and it’s consistent with your previous run (76.08%). Now, you’re asking about getting "real predictions"—I assume you want to use the trained model to make predictions on new, unseen CSI data (e.g., from a new .cleaned file or real-time input). Let’s make that happen!
+
+What You Have Now
+Trained Model: The best model is saved as csi_model_best.pth with a test accuracy of 76.35%.
+Confusion Matrix: confusion_matrix.png shows how the model performs across the 5 classes (empty, ideal, walk, run, jump). Check it out to see where it might be misclassifying.
+Data Pipeline: The script already handles preprocessing (normalization) and loading, which we can reuse.
+Getting Real Predictions
+To make predictions on new data, we need to:
+
+Load the trained model.
+Preprocess new CSI data (e.g., from a .cleaned file) to match the training format (64-sample windows, normalized).
+Run the model on this data to get predictions.
+Since you didn’t specify a new file, I’ll provide a script that loads the model and allows you to predict on a new .cleaned file. You can point it to any file (e.g., clean_walk_33.cleaned if you have it).
+
+Prediction Script
+Here’s a script to make predictions on new data:
+
+predict_csi.py
+python
+Show inline
+How to Use This Script
+Save the Script:
+Save it as predict_csi.py in your C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned directory.
+Install Dependencies:
+Ensure you have numpy, torch, scikit-learn, and re installed. If not, run:
+text
+
+Copy
+pip install numpy torch scikit-learn
+Prepare New Data:
+Point new_file_path to a new .cleaned file (e.g., clean_walk_33.cleaned). If you don’t have a new file, you can use an existing one (e.g., clean_walk_28.cleaned) to test, but for "real" predictions, use data the model hasn’t seen.
+Ensure the file follows the same format (e.g., CSI_DATA,....,"[44,-64,2,...]") with 256-value CSI arrays.
+Run the Script:
+Execute it:
+text
+
+
+python predict_csi.py
+
+Output: You’ll see predictions for each 64-sample window in the file, labeled as "empty", "ideal", "walk", "run", or "jump".
+Important Notes
+Scaler Issue: The script assumes the scaler used during training isn’t saved. Ideally, you’d save the scaler object during training (e.g., np.save('scaler_mean.npy', scaler.mean_) in train_csi_model.py). Since we didn’t do that, it fits the scaler on the new data, which isn’t perfect (it should use the training scaler for consistency). To fix this, modify train_csi_model.py to save the scaler after fitting:
+text
+
+
+# After scaler.fit_transform in train_csi_model.py
+np.save('scaler_mean.npy', scaler.mean_)
+np.save('scaler_scale.npy', scaler.scale_)
+
+
+Then update predict_csi.py to load these files.
+Windowing: The script segments the new data into 64-sample windows with 50% overlap, matching the training process. Ensure your new file has enough samples (at least 64).
+Real Predictions: For truly "real" predictions, collect new CSI data (e.g., from a device) and clean it into the .cleaned format. If you have such data, let me know, and I’ll help adjust the script!
+What to Expect
+The script will output predictions like:
+text
+
+
+Predictions for C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned\clean_walk_33.cleaned:
+Window 1: walk
+Window 2: walk
+Window 3: run
+
+
+...
+Check if the predictions align with the expected activity. If not, the confusion matrix (confusion_matrix.png) from your last run can hint at common errors.
+Next Steps
+Run predict_csi.py with a new file and share the output.
+If the predictions seem off, we can refine the model or features (e.g., add amplitude processing).
+Let me know if you need help collecting new data or saving the scaler properly, bro! How’s it looking?
+
+
+
+
+
+Model Architecture Used
+The .pth files were generated using the train_csi_model.py script, which evolved over our chats. Let’s trace the key versions:
+
+Initial Model (First train_csi_model.py):
+Architecture: A Convolutional Neural Network (CNN).
+Details: Defined as CSIModel with two Conv1d layers (16 and 32 filters), MaxPool1d, and fully connected layers (fc1, fc2).
+Code Snippet:
+text
+
+Copy
+class CSIModel(nn.Module):
+    def __init__(self, input_shape=(64, 256), num_classes=5):
+        super(CSIModel, self).__init__()
+        self.conv1 = nn.Conv1d(in_channels=input_shape[1], out_channels=16, kernel_size=3, padding=1)
+        self.pool = nn.MaxPool1d(2)
+        self.conv2 = nn.Conv1d(16, 32, kernel_size=3, padding=1)
+        self.fc1 = nn.Linear(32 * (input_shape[0] // 4), 128)
+        self.fc2 = nn.Linear(128, num_classes)
+        self.relu = nn.ReLU()
+        self.dropout = nn.Dropout(0.5)
+Outcome: This model achieved 48.50% validation accuracy but had a shape mismatch error, which we fixed later.
+Improved Model (Later train_csi_model.py Versions):
+Architecture: A hybrid CNN-LSTM model.
+Details: Defined as CSIHybridModel with:
+Two Conv1d layers (32 and 64 filters) for spatial feature extraction.
+An LSTM layer (hidden size 64) for temporal modeling.
+Fully connected layers (fc1, fc2) for classification.
+Code Snippet:
+text
+
+Copy
+class CSIHybridModel(nn.Module):
+    def __init__(self, input_shape=(64, 256), num_classes=5):
+        super(CSIHybridModel, self).__init__()
+        self.conv1 = nn.Conv1d(in_channels=input_shape[1], out_channels=32, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv1d(32, 64, kernel_size=3, padding=1)
+        self.pool = nn.MaxPool1d(2)
+        self.relu = nn.ReLU()
+        self.lstm = nn.LSTM(input_size=64, hidden_size=64, num_layers=1, batch_first=True)
+        self.fc1 = nn.Linear(64, 128)
+        self.fc2 = nn.Linear(128, num_classes)
+        self.dropout = nn.Dropout(0.5)
+
+    def forward(self, x):
+        x = x.transpose(1, 2)
+        x = self.pool(self.relu(self.conv1(x)))
+        x = self.pool(self.relu(self.conv2(x)))
+        x = x.transpose(1, 2)
+        x, _ = self.lstm(x)
+        x = x[:, -1, :]
+        x = self.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.fc2(x)
+        return x
+Outcome: This model achieved 76.35% test accuracy in your last run, with the confusion matrix saved. The latest train_csi_model.py (including the confusion matrix addition) used this hybrid architecture.
+Conclusion
+Method: The .pth files (csi_model.pth and csi_model_best.pth) were generated by a hybrid CNN-LSTM model, not a pure CNN, LSTM, or Random Forest.
+Reasoning: The initial CSIModel was a CNN, but we switched to CSIHybridModel to improve performance, and your latest results (76.35% test accuracy) align with the hybrid version. Random Forest wasn’t used at any point in the scripts I provided.
+Verification
+To double-check:
+
+Load the .pth file and print the model architecture:
+python
+
+Copy
+import torch
+import torch.nn as nn
+
+class CSIHybridModel(nn.Module):
+    def __init__(self, input_shape=(64, 256), num_classes=5):
+        super(CSIHybridModel, self).__init__()
+        self.conv1 = nn.Conv1d(in_channels=input_shape[1], out_channels=32, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv1d(32, 64, kernel_size=3, padding=1)
+        self.pool = nn.MaxPool1d(2)
+        self.relu = nn.ReLU()
+        self.lstm = nn.LSTM(input_size=64, hidden_size=64, num_layers=1, batch_first=True)
+        self.fc1 = nn.Linear(64, 128)
+        self.fc2 = nn.Linear(128, num_classes)
+        self.dropout = nn.Dropout(0.5)
+
+    def forward(self, x):
+        x = x.transpose(1, 2)
+        x = self.pool(self.relu(self.conv1(x)))
+        x = self.pool(self.relu(self.conv2(x)))
+        x = x.transpose(1, 2)
+        x, _ = self.lstm(x)
+        x = x[:, -1, :]
+        x = self.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.fc2(x)
+        return x
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = CSIHybridModel().to(device)
+model.load_state_dict(torch.load(r'C:\Users\Admin\Desktop\csi_copy\dataset\mat\cleaned\csi_model_best.pth', weights_only=True))
+print(model)
+Run this:
+text
+
+Copy
+python verify_model.py
+If the output shows Conv1d, LSTM, and Linear layers matching the above, it confirms the hybrid CNN-LSTM architecture.
+Implications for Your WebSocket Server
+Since your main.py (from the last response) already uses the CSIHybridModel to load csi_model_best.pth, you’re good to go! The hybrid architecture is well-suited for your time-series CSI data, combining spatial feature extraction (CNN) with temporal modeling (LSTM).
+
+
+
+🚀 Rocket Transforming: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 168.85it/s] 
+🚀 Rocket Transforming: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 162.19it/s] 
+🚀 Rocket Transforming: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 135.46it/s] 
+INFO:__main__:Accuracy: 70.43%                                                                                                 | 0/1 [00:00<?, ?it/s] 
+INFO:__main__:Confusion Matrix:
+INFO:__main__:[[354 153 169  34  55]
+ [ 48 788  52  11  46]
+ [ 84 163 608  18  51]
+ [ 40  86  25 332 142]
+ [  3   8   2  16 791]]
+INFO:__main__:Classification Report:
+INFO:__main__:              precision    recall  f1-score   support
+
+     walking       0.67      0.46      0.55       765
+     running       0.66      0.83      0.74       945
+     jumping       0.71      0.66      0.68       924
+        idle       0.81      0.53      0.64       625
+       empty       0.73      0.96      0.83       820
+
+    accuracy                           0.70      4079
+   macro avg       0.71      0.69      0.69      4079
+weighted avg       0.71      0.70      0.69      4079
+
+Saving model:  92%|████████████████████████████████████████████████████████████████████████████████████████        | 11/12 [01:18<00:09,  9.01s/step]INFO:__main__:Trained model saved to: saved_models
+Saving model: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 12/12 [01:18<00:00,  6.51s/step]

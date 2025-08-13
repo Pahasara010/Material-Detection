@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Reports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+        th { background: #f0f0f0; }
+        .filters { margin: 20px; }
+        button { padding: 10px 20px; margin: 0 10px; cursor: pointer; }
+        #chart { max-width: 600px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <h1>Activity Reports</h1>
+    <div class="filters">
+        <button onclick="window.location.href='/all'">All Time</button>
+        <button onclick="window.location.href='/week'">Last Week</button>
+        <button onclick="window.location.href='/day'">Last Day</button>
+    </div>
+    <h2>Activity Logs (Period: {{ period|capitalize }})</h2>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Activity</th>
+            <th>RX Sources</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.activity }}</td>
+            <td>{{ log.rx_sources }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Activity Distribution</h2>
+    <canvas id="activityChart"></canvas>
+    <script>
+        const stats = {{ stats|safe }};
+        const ctx = document.getElementById('activityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: stats.labels,
+                datasets: [{
+                    label: 'Activity Counts',
+                    data: stats.data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

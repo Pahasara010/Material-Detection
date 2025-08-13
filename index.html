@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wave_Walker Monitor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 20px; background: #f4f4f4; }
+        #stickman { width: 100%; max-width: 400px; border: 1px solid #ccc; margin: 20px auto; background: #fff; }
+        #logs { margin-top: 20px; font-size: 16px; list-style: none; padding: 0; max-width: 600px; margin: 0 auto; }
+        #logs li { margin: 5px 0; padding: 10px; background: #fff; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #007bff; color: #fff; border: none; border-radius: 5px; }
+        button:hover { background: #0056b3; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Wave_Walker Monitor</h1>
+    <div id="stickman"></div>
+    <h2>Recent Activities</h2>
+    <ul id="logs"></ul>
+    <button onclick="toggleSystem()">Arm/Disarm System</button>
+
+    <h2>User Data</h2>
+    <form method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter username">
+        <input type="submit" value="Submit">
+    </form>
+    <ul>
+        {% if user_data %}
+            {% for key, value in user_data.items() %}
+                <li>{{ value.username }} at {{ value.timestamp }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No user data available.</li>
+        {% endif %}
+    </ul>
+
+    <script>
+        let activity = "empty";
+
+        function setup() {
+            let canvas = createCanvas(400, 400);
+            canvas.parent('stickman');
+        }
+
+        function draw() {
+            background(255);
+            textSize(20);
+            textAlign(CENTER);
+            fill(0);
+            if (activity === "empty") {
+                text("No Activity", 200, 200);
+            } else if (activity === "idle") {
+                line(200, 200, 200, 300);
+                line(200, 200, 180, 250);
+                line(200, 200, 220, 250);
+                line(200, 300, 190, 350);
+                line(200, 300, 210, 350);
+                circle(200, 180, 40);
+            } else if (activity === "walk") {
+                line(200, 200, 200, 300);
+                line(200, 200, 180, 250);
+                line(200, 200, 220, 240);
+                line(200, 300, 180, 340);
+                line(200, 300, 220, 350);
+                circle(200, 180, 40);
+            } else if (activity === "run") {
+                line(200, 200, 200, 300);
+                line(200, 200, 170, 240);
+                line(200, 200, 230, 240);
+                line(200, 300, 170, 330);
+                line(200, 300, 230, 330);
+                circle(200, 180, 40);
+            } else if (activity === "jump") {
+                line(200, 180, 200, 280);
+                line(200, 180, 170, 220);
+                line(200, 180, 230, 220);
+                line(200, 280, 170, 240);
+                line(200, 280, 230, 240);
+                circle(200, 160, 40);
+            }
+        }
+
+        function updateLogs() {
+            fetch('/live')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not OK');
+                    return response.json();
+                })
+                .then(data => {
+                    activity = data.activity || "empty";
+                    let logs = document.getElementById('logs');
+                    let li = document.createElement('li');
+                    li.textContent = `${new Date(data.timestamp).toLocaleString()}: ${activity} (RX: ${data.rx_sources.join(', ')})`;
+                    logs.prepend(li);
+                    while (logs.children.length > 10) logs.removeChild(logs.lastChild);
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    let logs = document.getElementById('logs');
+                    let li = document.createElement('li');
+                    li.textContent = `Error fetching activity: ${error.message}`;
+                    logs.prepend(li);
+                });
+        }
+
+        function toggleSystem() {
+            fetch('/toggle_arm', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(`System ${data.armed ? 'Armed' : 'Disarmed'}`);
+                })
+                .catch(error => console.error('Toggle error:', error));
+        }
+
+        // Poll for updates every 2 seconds
+        setInterval(updateLogs, 2000);
+        updateLogs(); // Initial fetch
+    </script>
+</body>
+</html>
